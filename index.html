@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Document Summarizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero-card">
+        <div>
+          <p class="eyebrow">Smart document intelligence</p>
+          <h1>AI Document Summarizer & Q&amp;A</h1>
+          <p>
+            Upload a PDF or DOCX file to generate a polished summary, extract key points,
+            and ask questions from the document content.
+          </p>
+        </div>
+        <div class="hero-badge">Fast • Accurate • Professional</div>
+      </header>
+
+      <main class="layout-grid">
+        <section class="panel upload-panel">
+          <h2>Upload your document</h2>
+          <label class="drop-zone" for="fileInput">Choose a PDF, DOCX, or text file</label>
+          <input type="file" id="fileInput" accept=".pdf,.docx,.txt,.md,.json" />
+          <p class="hint">Make sure the backend server is running on http://127.0.0.1:8000</p>
+          <button id="uploadBtn">Analyze document</button>
+          <div id="statusMessage" class="status">Waiting for a file…</div>
+        </section>
+
+        <section class="panel preview-panel">
+          <h2>Document preview</h2>
+          <pre id="documentText">Extracted content will appear here.</pre>
+        </section>
+      </main>
+
+      <section class="results-grid">
+        <article class="panel">
+          <h2>Summary</h2>
+          <div id="summary">Your summary will appear here after processing.</div>
+        </article>
+
+        <article class="panel">
+          <h2>Key points</h2>
+          <ul id="keyPoints"></ul>
+        </article>
+
+        <article class="panel">
+          <h2>Insight breakdown</h2>
+          <div id="insightStats">
+            <div class="stat-box"><strong id="chunkCount">0</strong><span>Chunks</span></div>
+            <div class="stat-box"><strong id="textLength">0</strong><span>Characters</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel qna-panel">
+        <h2>Ask a question</h2>
+        <div id="conversationHistory" class="conversation-history">Ask a question about the uploaded document to get an answer.</div>
+        <div class="question-row">
+          <input type="text" id="question" placeholder="Example: What is the main idea of this document?" />
+          <button id="askBtn">Ask</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

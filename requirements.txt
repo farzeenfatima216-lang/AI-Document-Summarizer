@@ -1,0 +1,7 @@
+streamlit
+pypdf
+python-docx
+langchain
+langchain-community
+langchain-core
+langchain-groq
